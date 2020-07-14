@@ -8,6 +8,8 @@ class OptionsList extends Component {
       <form className="main__form">
         <h2>Customize your laptop</h2>
         <OptionsListItem
+          features={this.props.features}
+          usCurrencyFormat={this.props.usCurrencyFormat}
           updateFeature={this.props.updateFeature}
           selectedInState={this.props.selectedInState}
         />

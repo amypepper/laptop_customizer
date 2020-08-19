@@ -47,7 +47,6 @@ class App extends Component {
         </header>
         <main>
           <OptionsList
-            features={this.props.features}
             selectedInState={this.state.selected}
             usCurrencyFormat={USCurrencyFormat}
             updateFeature={this.updateFeature}

@@ -3,7 +3,9 @@ import slugify from "slugify";
 
 class OptionsListItem extends Component {
   render() {
+    // create an array of the names of the different specs ('Processor', 'Display', etc.)
     return Object.keys(this.props.features).map((feature, idx) => {
+      // create a unique identifier for each spec (e.g, 'Processor-0')
       const featureHash = feature + "-" + idx;
 
       const options = this.props.features[feature].map((item) => {
@@ -15,6 +17,7 @@ class OptionsListItem extends Component {
               type="radio"
               id={itemHash}
               className="feature__option"
+              // assign all radio buttons in a spec category the `name` attr. of that spec, so you can only select one at a time
               name={slugify(feature)}
               checked={item.name === this.props.selectedInState[feature].name}
               onChange={(e) => this.props.updateFeature(feature, item)}

@@ -5,17 +5,15 @@ import Total from "./Total";
 
 class Cart extends Component {
   render() {
+    const { selected } = this.props;
     return (
       <section className="main__summary">
         <h2>Your cart</h2>
-        <CartItem
-          usCurrencyFormat={this.props.usCurrencyFormat}
-          selectedInState={this.props.selectedInState}
-        />
-        <Total
-          usCurrencyFormat={this.props.usCurrencyFormat}
-          selectedInState={this.props.selectedInState}
-        />
+        {Object.keys(selected).map((feature, idx) => (
+          <CartItem {...this.props} feature={feature} idx={idx} key={idx} />
+        ))}
+
+        <Total {...this.props} />
       </section>
     );
   }

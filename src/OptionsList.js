@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 
+import features from './features';
 import Spec from "./Spec";
 
 class OptionsList extends Component {
   render() {
-    const { features } = this.props;
+    
     return (
       <form className="main__form">
         <h2>Customize your laptop</h2>

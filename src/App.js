@@ -32,7 +32,11 @@ class App extends Component {
   };
 
   updateFeature = (feature, newValue) => {
+    // make a copy of the this.state.selected object
     const selected = Object.assign({}, this.state.selected);
+    // grab the object inside state.selected's Processor/OS/VideoCard/Display
+    // property and insert the newly selected object into its corresponding
+    // category (so a Processor part gets put in the Processor property)
     selected[feature] = newValue;
     this.setState({
       selected,
@@ -40,6 +44,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <div className="App">
         <header>
@@ -47,6 +52,8 @@ class App extends Component {
         </header>
         <main>
           <OptionsList
+            // copy everything in state as a key-value pair on the props obj
+            // so now I have this.props.selected
             {...this.state}
             {...this.props}
             USCurrencyFormat={USCurrencyFormat}

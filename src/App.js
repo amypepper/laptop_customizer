@@ -47,15 +47,12 @@ class App extends Component {
         </header>
         <main>
           <OptionsList
-            features={this.props.features}
-            selectedInState={this.state.selected}
-            usCurrencyFormat={USCurrencyFormat}
+            {...this.state}
+            {...this.props}
+            USCurrencyFormat={USCurrencyFormat}
             updateFeature={this.updateFeature}
           />
-          <Cart
-            usCurrencyFormat={USCurrencyFormat}
-            selectedInState={this.state.selected}
-          />
+          <Cart {...this.state} USCurrencyFormat={USCurrencyFormat} />
         </main>
       </div>
     );

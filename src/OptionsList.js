@@ -1,18 +1,16 @@
 import React, { Component } from "react";
 
-import OptionsListItem from "./OptionsListItem";
+import Spec from "./Spec";
 
 class OptionsList extends Component {
   render() {
+    const { features } = this.props;
     return (
       <form className="main__form">
         <h2>Customize your laptop</h2>
-        <OptionsListItem
-          features={this.props.features}
-          usCurrencyFormat={this.props.usCurrencyFormat}
-          updateFeature={this.props.updateFeature}
-          selectedInState={this.props.selectedInState}
-        />
+        {Object.keys(features).map((feature, idx) => (
+          <Spec {...this.props} feature={feature} idx={idx} key={idx} />
+        ))}
       </form>
     );
   }

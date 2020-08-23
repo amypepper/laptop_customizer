@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+
+import features from './features'
 import SpecPart from "./SpecPart";
 
 class Spec extends Component {
   render() {
-    const { features, feature, idx } = this.props;
+    const { feature, idx } = this.props;
     const featureHash = feature + "-" + idx;
 
     const options = features[feature].map((item, i) => (

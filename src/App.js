@@ -44,7 +44,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <div className="App">
         <header>
@@ -55,7 +54,6 @@ class App extends Component {
             // copy everything in state as a key-value pair on the props obj
             // so now I have this.props.selected
             {...this.state}
-            {...this.props}
             USCurrencyFormat={USCurrencyFormat}
             updateFeature={this.updateFeature}
           />
